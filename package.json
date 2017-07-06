@@ -1,0 +1,26 @@
+{
+  "name": "phasertemplate",
+  "version": "1.0.0",
+  "description": "Phaser Template",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lnesi/phasertemplate.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lnesi/phasertemplate/issues"
+  },
+  "homepage": "https://github.com/lnesi/phasertemplate#readme",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "phaser": "^2.6.2"
+  },
+  "devDependencies": {
+    "gulp-webserver": "^0.9.1"
+  }
+}
