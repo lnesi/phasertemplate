@@ -18,9 +18,14 @@
   "homepage": "https://github.com/lnesi/phasertemplate#readme",
   "dependencies": {
     "gulp": "^3.9.1",
-    "phaser": "^2.6.2"
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-include": "^2.3.1",
+    "gulp-typescript": "^3.1.7",
+    "phaser": "^2.6.2",
+    "typescript": "^2.4.1"
   },
   "devDependencies": {
+    "gulp-watch": "^4.3.11",
     "gulp-webserver": "^0.9.1"
   }
 }
