@@ -50,6 +50,11 @@ gulp.task('watch_src', function() {
     });
 });
 
+gulp.task('assets',function(){
+    gulp.src('src/assets/**/*').pipe(gulp.dest('build/assets'));
+
+});
+
 gulp.task('watch', ['dependencies', 'watch_src']);
-gulp.task('build', ['dependencies', 'build_src']);
+gulp.task('build', ['dependencies', 'build_src','assets']);
 gulp.task('build_src', ['typescript', 'minify-html', 'sass']);
