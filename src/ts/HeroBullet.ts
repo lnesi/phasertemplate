@@ -1,8 +1,8 @@
 class HeroBullet{
-	engine:Object;
-	bullet:Object;
-	updateIndex:int;
-	constructor(ship){
+	engine:PhaserGame;
+	bullet:Phaser.Sprite;
+	updateIndex:number;
+	constructor(ship:HeroShip){
 		this.engine=ship.engine;
 		
 		this.bullet=this.engine.add.sprite(0, 0,  'mainsprite', 'laserBlue01.png');

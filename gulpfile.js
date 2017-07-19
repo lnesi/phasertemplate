@@ -14,13 +14,14 @@ gulp.task('sass', function() {
 });
 
 gulp.task("typescript", function() {
-    return gulp.src('src/ts/*.ts')
+    return gulp.src(['src/ts/*.ts','node_modules/phaser/typescript/phaser.d.ts'])
         .pipe(ts({
             noImplicitAny: true,
             outFile: 'main.js'
         }))
         .pipe(gulp.dest('build/js'));
 });
+
 
 
 gulp.task("dependencies", function() {

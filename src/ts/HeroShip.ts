@@ -1,13 +1,18 @@
+class KeyInput{
+	left:Phaser.Key
+	right:Phaser.Key 
+}
+
 class HeroShip{
-	engine: Object
+	engine: PhaserGame
 	body:Object
-	displayGroup:Object
-	movementControls:Object
-	physics_body:Object
-	horizontal_velicity:int=200
-	fireControl:Object
-	gun:Object
-	constructor(engine,x,y){
+	displayGroup:Phaser.Group
+	movementControls:KeyInput
+	physics_body:Phaser.Sprite
+	horizontal_velicity:number=200
+	fireControl:Phaser.Key
+	gun:HeroGun
+	constructor(engine:PhaserGame,x:number,y:number){
 		
 		this.engine=engine;
 		this.displayGroup=this.engine.add.group();

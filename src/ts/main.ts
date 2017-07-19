@@ -1,21 +1,33 @@
-class Game{
-	engine: Object
+class PhaserGame extends Phaser.Game{
+    customUpdates:Array<any>
+    registerUpdate(callback:any){
+		return this.customUpdates.push(callback);
+    }
+
+    unregisterUpdate(position:number){
+		this.customUpdates.splice(position,1);
+    }
+
+}
+
+class Game {
+	engine: PhaserGame
 	background:Object
 	hero:Object
 	
 	constructor(){
 		var w=window.innerWidth*window.devicePixelRatio;
 		var h=window.innerHeight*window.devicePixelRatio;
-		this.engine=new Phaser.Game(480,640, Phaser.CANVAS, '', { preload: this.preload.bind(this), create: this.created.bind(this),update:this.update.bind(this),render:this.render.bind(this) });
+		this.engine=new PhaserGame(480,640, Phaser.CANVAS, '', { preload: this.preload.bind(this), create: this.created.bind(this),update:this.update.bind(this),render:this.render.bind(this) });
 		this.engine.customUpdates=[];
 
-		this.engine.registerUpdate=function(callback){
-			return this.engine.customUpdates.push(callback);
-		}.bind(this);
+		// this.engine.registerUpdate=function(callback){
+		// 	return this.engine.customUpdates.push(callback);
+		// }.bind(this);
 
-		this.engine.unregisterUpdate=function(position){
-			this.engine.customUpdates.splice(position,1);
-		}.bind(this);
+		// this.engine.unregisterUpdate=function(position){
+		// 	this.engine.customUpdates.splice(position,1);
+		// }.bind(this);
 		
 		
 

@@ -1,15 +1,15 @@
 class HeroGun{
-	engine:Object
-	gunBody:Object
-	reloadTime:int=500
-	bulletSpeed:int=500
-	deltaTime:int
-	bullets:Object
-	ship:Object
-	constructor(ship,gunTexture,bulletTexture){
+	engine:PhaserGame
+	gunBody:Phaser.Sprite
+	reloadTime:number=500
+	bulletSpeed:number=500
+	deltaTime:number=0
+	bullets:Phaser.Group
+	ship:HeroShip
+	constructor(ship:HeroShip,gunTexture:string,bulletTexture:string){
 		this.engine=ship.engine;
 		this.ship=ship;
-		this.gunBody = this.engine.add.sprite(0, 0  'mainsprite', gunTexture);
+		this.gunBody = this.engine.add.sprite(0, 0 , 'mainsprite', gunTexture);
 		this.gunBody.y=-this.gunBody.height;
 		ship.displayGroup.add(this.gunBody,false,0);
 		this.gunBody.anchor.setTo(0.5,0.5);
@@ -31,7 +31,6 @@ class HeroGun{
 	}
 
 	fire(){
-		
 		if(this.engine.time.now>this.deltaTime){
 			console.log("Fire");
 			var bullet = this.bullets.getFirstExists(false);
